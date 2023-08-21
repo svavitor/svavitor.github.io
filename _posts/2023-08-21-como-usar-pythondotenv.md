@@ -1,6 +1,5 @@
 ---
 title: Como usar python-dotenv
-author: svavitor
 date: 2023-08-21 18:40:00 +0800
 categories: [Blogging]
 tags: [python, dotenv]
