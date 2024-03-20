@@ -28,14 +28,14 @@ jobs:
         with:
           fetch-depth: 0 # for posts's lastmod
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: ${{ matrix.ruby }}
-          bundler-cache: true
+      #- name: Setup Ruby
+      #  uses: ruby/setup-ruby@v1
+      #  with:
+      #    ruby-version: ${{ matrix.ruby }}
+      #    bundler-cache: true
 
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      #- name: Setup Node
+      #  uses: actions/setup-node@v3
 
       - name: Build Assets
         run: npm i && npm run build
