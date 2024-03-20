@@ -16,9 +16,8 @@ on:
 
 jobs:
   build:
-    runs-on: 
-        - ubuntu-latest
-        - self-hosted
+    runs-on: self-hosted
+    
     strategy:
       matrix:
         ruby: [2.7, 3]
