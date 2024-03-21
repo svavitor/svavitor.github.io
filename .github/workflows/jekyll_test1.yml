@@ -2,13 +2,11 @@ name: build-site
 run-name: build live site
 
 on:
-  # run when called from another workflow
-  workflow_call:
-
-  # run if user manually requests it
+  push:
+    branches: ["master"]
+    
   workflow_dispatch:
-
-# variables
+  
 env:
   PREVIEWS_FOLDER: preview
 
@@ -20,7 +18,6 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      # for debugging
       - name: Print contexts
         uses: crazy-max/ghaction-dump-context@v1
 
@@ -34,5 +31,4 @@ jobs:
           enablement: false
 
       - name: Build live version of site
-        run: |
-          JEKYLL_ENV=production bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path || '' }}"
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path || '' }}"
